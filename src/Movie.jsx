@@ -38,12 +38,12 @@ class Movie extends React.Component {
         if (res.error) {
           alert(res.error);
         } else {
-          alert(`Employee #${res} has been successfully added!`);
+          alert(`Movie #${res} has been successfully added!`);
         }
       })
       .catch(e => {
         console.error(e);
-        alert("There was an error when adding the employee.");
+        alert("There was an error when adding the movie.");
       });
   }
 
@@ -51,7 +51,7 @@ class Movie extends React.Component {
     console.log(this.state.movieName);
     return (
       <div className="FormEmployee">
-        <h1>New Employee</h1>
+        <h1>Add your favourite movie:</h1>
 
         <form onSubmit={this.submitForm}>
           <fieldset>
@@ -71,7 +71,7 @@ class Movie extends React.Component {
             <div className="form-data">
               <label htmlFor="movieURL">URL to movie</label>
               <input
-                type="text"
+                type="url"
                 id="movieURL"
                 name="movieURL"
                 onChange={this.onChange}
