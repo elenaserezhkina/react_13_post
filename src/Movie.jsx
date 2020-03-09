@@ -69,7 +69,7 @@ class Movie extends React.Component {
             </div>
 
             <div className="form-data">
-              <label htmlFor="movieURL">URL to movie</label>
+              <label htmlFor="movieURL">URL to the movie you like</label>
               <input
                 type="url"
                 id="movieURL"
