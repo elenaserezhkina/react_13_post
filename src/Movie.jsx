@@ -5,9 +5,9 @@ class Movie extends React.Component {
     super(props);
 
     this.state = {
-      movieName: "",
-      movieURL: "",
-      textArea: ""
+      title: "",
+      poster: "",
+      comment: ""
     };
 
     this.onChange = this.onChange.bind(this);
@@ -38,7 +38,7 @@ class Movie extends React.Component {
         if (res.error) {
           alert(res.error);
         } else {
-          alert(`Movie #${res} has been successfully added!`);
+          alert(`Movie ${res.title} has been successfully added!`);
         }
       })
       .catch(e => {
@@ -48,7 +48,7 @@ class Movie extends React.Component {
   }
 
   render() {
-    console.log(this.state.movieName);
+    console.log(this.state.title);
     return (
       <div className="FormEmployee">
         <h1>Add your favourite movie:</h1>
@@ -61,9 +61,9 @@ class Movie extends React.Component {
               <input
                 type="text"
                 id="movieName"
-                name="movieName"
+                name="title"
                 onChange={this.onChange}
-                value={this.state.movieName}
+                value={this.state.title}
                 required
               />
             </div>
@@ -73,23 +73,24 @@ class Movie extends React.Component {
               <input
                 type="url"
                 id="movieURL"
-                name="movieURL"
+                name="poster"
                 onChange={this.onChange}
-                value={this.state.movieURL}
+                value={this.state.poster}
                 required
               />
             </div>
 
             <div className="form-data">
               <label htmlFor="textArea">Your message</label>
-              <input
+              <textarea
                 type="textarea"
                 id="textArea"
-                name="textArea"
+                name="comment"
                 onChange={this.onChange}
-                value={this.state.textArea}
                 required
-              />
+              >
+                {this.state.comment}
+              </textarea>
             </div>
             <hr />
             <div className="form-data">
